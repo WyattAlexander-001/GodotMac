@@ -1,0 +1,63 @@
+[gd_scene load_steps=5 format=3 uid="uid://clm08535ortmv"]
+
+[ext_resource type="Texture2D" uid="uid://cevnhh0xack0c" path="res://assets/images/city_apoc.png" id="1_8pvap"]
+[ext_resource type="Texture2D" uid="uid://byn75ay32qfdw" path="res://assets/images/food.png" id="2_pxbvl"]
+[ext_resource type="Texture2D" uid="uid://xmmg8uye7fhm" path="res://assets/images/gear.png" id="3_2cf6q"]
+[ext_resource type="Texture2D" uid="uid://nwv730ogb447" path="res://assets/images/lightning-bolt.png" id="4_a4pdb"]
+
+[node name="Node" type="Node"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(856, 485)
+zoom = Vector2(1.16, 1.16)
+
+[node name="BG" type="Sprite2D" parent="."]
+position = Vector2(970, 540)
+scale = Vector2(1.55, 1.55)
+texture = ExtResource("1_8pvap")
+metadata/_edit_lock_ = true
+
+[node name="Panel" type="Panel" parent="BG"]
+offset_left = 241.0
+offset_top = -307.0
+offset_right = 365.0
+offset_bottom = -101.0
+
+[node name="Food" type="Sprite2D" parent="."]
+position = Vector2(1376, 95.9998)
+scale = Vector2(0.125, 0.125)
+texture = ExtResource("2_pxbvl")
+
+[node name="Gear" type="Sprite2D" parent="."]
+position = Vector2(1377.13, 222.875)
+scale = Vector2(0.120605, 0.120605)
+texture = ExtResource("3_2cf6q")
+
+[node name="Lightning-bolt" type="Sprite2D" parent="."]
+position = Vector2(1376, 352)
+scale = Vector2(0.117187, 0.117187)
+texture = ExtResource("4_a4pdb")
+
+[node name="Label" type="Label" parent="."]
+offset_left = 1472.0
+offset_top = 88.0
+offset_right = 1560.0
+offset_bottom = 128.0
+text = "100"
+uppercase = true
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 1472.0
+offset_top = 344.0
+offset_right = 1560.0
+offset_bottom = 384.0
+text = "100"
+uppercase = true
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 1472.0
+offset_top = 216.0
+offset_right = 1560.0
+offset_bottom = 256.0
+text = "100"
+uppercase = true
