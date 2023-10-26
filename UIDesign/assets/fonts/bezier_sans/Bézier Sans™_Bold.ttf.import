@@ -1,0 +1,33 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://dcfnlf5mdb45d"
+path="res://.godot/imported/Bézier Sans™_Bold.ttf-895fd2eea4b16e2705ddbc0fa1993a1c.fontdata"
+
+[deps]
+
+source_file="res://assets/fonts/bezier_sans/Bézier Sans™_Bold.ttf"
+dest_files=["res://.godot/imported/Bézier Sans™_Bold.ttf-895fd2eea4b16e2705ddbc0fa1993a1c.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[]
+language_support={}
+script_support={}
+opentype_features={}

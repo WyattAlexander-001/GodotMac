@@ -1,0 +1,10 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://dkpo0mov6lbci"]
+
+[ext_resource type="FontFile" uid="uid://b6flfwvs8u6xh" path="res://assets/fonts/bezier_sans/Bézier Sans™_Regular.ttf" id="1_ouih8"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3haxh"]
+
+[resource]
+Label/font_sizes/font_size = 32
+Label/fonts/font = ExtResource("1_ouih8")
+PanelContainer/styles/panel = SubResource("StyleBoxTexture_3haxh")
