@@ -32,3 +32,31 @@ offset_bottom = 695.0
 scale = Vector2(0.279999, 0.279999)
 theme_override_colors/default_color = Color(0.956863, 0.533333, 0.968627, 1)
 theme_override_font_sizes/normal_font_size = 100
+
+[node name="Greater" type="Button" parent="."]
+offset_left = 801.0
+offset_top = 190.0
+offset_right = 1132.0
+offset_bottom = 307.0
+theme_override_font_sizes/font_size = 34
+text = "No It Is Bigger!"
+
+[node name="Lesser" type="Button" parent="."]
+offset_left = 801.0
+offset_top = 342.0
+offset_right = 1132.0
+offset_bottom = 459.0
+theme_override_font_sizes/font_size = 34
+text = "NO smaller!"
+
+[node name="Yes" type="Button" parent="."]
+offset_left = 801.0
+offset_top = 512.0
+offset_right = 1132.0
+offset_bottom = 629.0
+theme_override_font_sizes/font_size = 34
+text = "Correct!"
+
+[connection signal="pressed" from="Greater" to="." method="_on_greater_pressed"]
+[connection signal="pressed" from="Lesser" to="." method="_on_lesser_pressed"]
+[connection signal="pressed" from="Yes" to="." method="_on_yes_pressed"]
