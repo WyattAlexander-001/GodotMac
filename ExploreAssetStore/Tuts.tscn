@@ -1,0 +1,30 @@
+[gd_scene load_steps=8 format=3 uid="uid://ce38pg8y5yxa"]
+
+[ext_resource type="Script" path="res://Node.gd" id="1_d2jiy"]
+[ext_resource type="Script" path="res://IfTut.gd" id="2_l04s2"]
+[ext_resource type="Script" path="res://VarTut.gd" id="3_juxow"]
+[ext_resource type="Script" path="res://Loops.gd" id="4_ytymk"]
+[ext_resource type="Script" path="res://Arrays.gd" id="5_lil7a"]
+[ext_resource type="Script" path="res://Functions.gd" id="6_t6fk4"]
+[ext_resource type="Script" path="res://Assignment1Array.gd" id="7_bm0x3"]
+
+[node name="Tuts" type="Node"]
+script = ExtResource("1_d2jiy")
+
+[node name="VarTut" type="Node" parent="."]
+script = ExtResource("3_juxow")
+
+[node name="IfTut" type="Node" parent="."]
+script = ExtResource("2_l04s2")
+
+[node name="Loops" type="Node" parent="."]
+script = ExtResource("4_ytymk")
+
+[node name="Arrays" type="Node" parent="."]
+script = ExtResource("5_lil7a")
+
+[node name="Functions" type="Node" parent="."]
+script = ExtResource("6_t6fk4")
+
+[node name="Assignment1Array" type="Node" parent="."]
+script = ExtResource("7_bm0x3")
