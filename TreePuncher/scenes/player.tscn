@@ -1,0 +1,76 @@
+[gd_scene load_steps=10 format=3 uid="uid://deaqurlg61w77"]
+
+[ext_resource type="Texture2D" uid="uid://bfoktjdksp0o5" path="res://sprites/character/zombie_head.png" id="1_pwdsq"]
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_tu35d"]
+[ext_resource type="Texture2D" uid="uid://bftj00oiefgqq" path="res://sprites/character/zombie_body.png" id="2_msr7i"]
+[ext_resource type="Texture2D" uid="uid://bxecafysjk0ik" path="res://sprites/character/zombie_arm.png" id="3_0ap8c"]
+[ext_resource type="Texture2D" uid="uid://cbp5ijh3bxrbl" path="res://sprites/character/zombie_leg.png" id="4_3a3vn"]
+
+[sub_resource type="Animation" id="Animation_vj7g7"]
+resource_name = "punch"
+step = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, 1.91986, 3.48787e-16]
+}
+
+[sub_resource type="Animation" id="Animation_irhh5"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Arm:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_44e7b"]
+_data = {
+"RESET": SubResource("Animation_irhh5"),
+"punch": SubResource("Animation_vj7g7")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_vrtou"]
+size = Vector2(64.6667, 176.667)
+
+[node name="Player" type="Area2D"]
+scale = Vector2(1.5, 1.5)
+script = ExtResource("1_tu35d")
+
+[node name="Head" type="Sprite2D" parent="."]
+texture = ExtResource("1_pwdsq")
+
+[node name="Body" type="Sprite2D" parent="."]
+position = Vector2(0, 59)
+texture = ExtResource("2_msr7i")
+
+[node name="Leg" type="Sprite2D" parent="."]
+position = Vector2(0, 116.667)
+texture = ExtResource("4_3a3vn")
+
+[node name="Arm" type="Sprite2D" parent="."]
+position = Vector2(0, 49.3333)
+texture = ExtResource("3_0ap8c")
+offset = Vector2(2.08165e-12, 30)
+
+[node name="Animation" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_44e7b")
+}
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.333333, 57)
+shape = SubResource("RectangleShape2D_vrtou")

@@ -1,9 +1,59 @@
-[gd_scene load_steps=2 format=3 uid="uid://cnlur1vsawbc3"]
+[gd_scene load_steps=7 format=3 uid="uid://cnlur1vsawbc3"]
 
-[ext_resource type="Texture2D" uid="uid://ckfgpdhs56xpc" path="res://icon.svg" id="1_lbf63"]
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_52k7p"]
+[ext_resource type="Texture2D" uid="uid://c4jywevridv55" path="res://sprites/skybox_sideHills.png" id="1_cfmq2"]
+[ext_resource type="Texture2D" uid="uid://bp2np577pulds" path="res://sprites/dirt_grass.png" id="2_g4ctk"]
+[ext_resource type="PackedScene" uid="uid://deaqurlg61w77" path="res://scenes/player.tscn" id="3_pmxfr"]
+[ext_resource type="PackedScene" uid="uid://tji574kdpnyq" path="res://scenes/trunk.tscn" id="4_dpoof"]
+[ext_resource type="Texture2D" uid="uid://vjo4tya3yq5u" path="res://sprites/Grave.png" id="6_kxskq"]
 
 [node name="Game" type="Node"]
+script = ExtResource("1_52k7p")
+trunk_scene = ExtResource("4_dpoof")
 
-[node name="Icon" type="Sprite2D" parent="."]
-position = Vector2(327, 701)
-texture = ExtResource("1_lbf63")
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -10
+position = Vector2(233, 629)
+scale = Vector2(2.80078, 2.80078)
+texture = ExtResource("1_cfmq2")
+metadata/_edit_lock_ = true
+
+[node name="Node2D" type="Node2D" parent="."]
+position = Vector2(-32, -1248)
+scale = Vector2(2, 2)
+metadata/_edit_group_ = true
+
+[node name="Tile" type="Sprite2D" parent="Node2D"]
+position = Vector2(64, 1216)
+texture = ExtResource("2_g4ctk")
+
+[node name="Tile2" type="Sprite2D" parent="Node2D"]
+position = Vector2(192, 1216)
+texture = ExtResource("2_g4ctk")
+
+[node name="Tile3" type="Sprite2D" parent="Node2D"]
+position = Vector2(320, 1216)
+texture = ExtResource("2_g4ctk")
+
+[node name="FirstTrunkPosition" type="Marker2D" parent="."]
+position = Vector2(352, 928)
+
+[node name="Player" parent="." instance=ExtResource("3_pmxfr")]
+position = Vector2(512, 864)
+
+[node name="Grave" type="Sprite2D" parent="."]
+position = Vector2(512, 992)
+texture = ExtResource("6_kxskq")
+
+[node name="TimeLeft" type="ProgressBar" parent="."]
+offset_left = 192.0
+offset_top = 192.0
+offset_right = 512.0
+offset_bottom = 224.0
+max_value = 5.0
+step = 1.0
+value = 5.0
+
+[node name="Timer" type="Timer" parent="."]
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

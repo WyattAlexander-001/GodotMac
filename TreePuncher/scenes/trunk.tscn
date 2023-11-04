@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=3 uid="uid://tji574kdpnyq"]
+
+[ext_resource type="Texture2D" uid="uid://bqopn8eyv7l24" path="res://sprites/trunk_mid.png" id="1_2d7oc"]
+[ext_resource type="Script" path="res://scripts/trunk.gd" id="1_gcmfa"]
+[ext_resource type="Texture2D" uid="uid://5t6gr7ip8icx" path="res://sprites/axe_iron.png" id="2_viumi"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_q311u"]
+radius = 45.1885
+
+[node name="Trunk" type="Node2D"]
+z_index = -2
+scale = Vector2(2, 2)
+script = ExtResource("1_gcmfa")
+
+[node name="LeftAxe" type="Area2D" parent="."]
+position = Vector2(-80, 0)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="LeftAxe"]
+texture = ExtResource("2_viumi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LeftAxe"]
+shape = SubResource("CircleShape2D_q311u")
+
+[node name="RightAxe" type="Area2D" parent="."]
+position = Vector2(80, 2.08165e-12)
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="RightAxe"]
+texture = ExtResource("2_viumi")
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RightAxe"]
+shape = SubResource("CircleShape2D_q311u")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+z_index = 1
+texture = ExtResource("1_2d7oc")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 3.0
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
