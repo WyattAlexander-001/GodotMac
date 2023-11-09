@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://deaqurlg61w77"]
+[gd_scene load_steps=11 format=3 uid="uid://deaqurlg61w77"]
 
 [ext_resource type="Texture2D" uid="uid://bfoktjdksp0o5" path="res://sprites/character/zombie_head.png" id="1_pwdsq"]
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_tu35d"]
@@ -46,6 +46,19 @@ _data = {
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_vrtou"]
 size = Vector2(64.6667, 176.667)
 
+[sub_resource type="SpriteFrames" id="SpriteFrames_w2vwi"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [],
+"loop": true,
+"name": &"new_animation",
+"speed": 5.0
+}]
+
 [node name="Player" type="Area2D"]
 scale = Vector2(1.5, 1.5)
 script = ExtResource("1_tu35d")
@@ -74,3 +87,7 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.333333, 57)
 shape = SubResource("RectangleShape2D_vrtou")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_w2vwi")
+animation = &"new_animation"
