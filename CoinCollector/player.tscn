@@ -78,7 +78,7 @@ metadata/_edit_group_ = true
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_fs4p5")
-animation = &"run"
+animation = &"idle"
 autoplay = "idle"
 metadata/_edit_group_ = true
 

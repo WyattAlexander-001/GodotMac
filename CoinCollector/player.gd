@@ -3,6 +3,7 @@ extends Area2D
 #Man made signals
 signal pickup
 signal hurt
+signal blah 
 
 @export var speed = 350
 var velocity = Vector2.ZERO
